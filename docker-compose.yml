@@ -4,6 +4,7 @@ services:
     image: "postgres:9.5"
     environment:
       - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=s3cr3t@
     ports:
       - "5432:5432"
     volumes:
