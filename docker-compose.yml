@@ -16,7 +16,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
     ports:
       - "45000:5000"
-    depends_on: postgres
+    depends_on: 
+      - postgres
     links:
       - "postgres"
 
