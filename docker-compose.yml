@@ -1,0 +1,11 @@
+version: "2"
+services:
+  postgres:
+    image: "postgres:9.5"
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - /opt/docker/data/pgsql:/var/lib/postgresql/data/pgdata
+      
