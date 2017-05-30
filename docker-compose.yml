@@ -9,4 +9,15 @@ services:
       - "5432:5432"
     volumes:
       - /opt/docker/data/pgsql:/var/lib/postgresql/data/pgdata
+
+  integracion-bancaria:
+    image: "integracion-bancaria:0.2"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    ports:
+      - "45000:5000"
+    depends_on: postgres
+    links:
+      - "postgres"
+
       
