@@ -11,7 +11,7 @@ services:
       - /opt/docker/data/pgsql:/var/lib/postgresql/data/pgdata
 
   integracion-bancaria:
-    image: "integracion-bancaria:0.2"
+    image: "integracion-bancaria:latest"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     ports:
