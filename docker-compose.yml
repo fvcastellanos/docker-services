@@ -1,24 +1,11 @@
 version: "2"
 services:
-  postgres:
-    image: "postgres:9.5"
-    environment:
-      - PGDATA=/var/lib/postgresql/data/pgdata
-      - POSTGRES_PASSWORD=s3cr3t@
-    ports:
-      - "5432:5432"
-    volumes:
-      - /opt/docker/data/pgsql:/var/lib/postgresql/data/pgdata
-
+  extra_hosts:
+    - "postgres:10.132.95.30"
   integracion-bancaria:
     image: "integracion-bancaria:latest"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     ports:
       - "45000:5000"
-    depends_on: 
-      - postgres
-    links:
-      - "postgres"
-
       
