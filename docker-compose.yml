@@ -1,8 +1,8 @@
 version: "2"
 services:
-  extra_hosts:
-    - "postgres:10.132.95.30"
   integracion-bancaria:
+    extra_hosts:
+      postgres: 10.132.95.30
     image: "integracion-bancaria:latest"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
